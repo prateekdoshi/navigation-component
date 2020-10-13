@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/countryFragment">
+
+    <fragment
+        android:id="@+id/countryFragment"
+        android:name="com.prateek.android.navigationcomponent.CountryFragment"
+        android:label="fragment_country"
+        tools:layout="@layout/fragment_country">
+        <action
+            android:id="@+id/action_countryFragment_to_indiaFragment"
+            app:destination="@id/indiaFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_countryFragment_to_canadaFragment"
+            app:destination="@id/canadaFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/indiaFragment"
+        android:name="com.prateek.android.navigationcomponent.IndiaFragment"
+        android:label="fragment_india"
+        tools:layout="@layout/fragment_india">
+        <action
+            android:id="@+id/action_indiaFragment_to_goaFragment"
+            app:destination="@id/goaFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/countryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/canadaFragment"
+        android:name="com.prateek.android.navigationcomponent.CanadaFragment"
+        android:label="fragment_canada"
+        tools:layout="@layout/fragment_canada" />
+    <fragment
+        android:id="@+id/goaFragment"
+        android:name="com.prateek.android.navigationcomponent.GoaFragment"
+        android:label="fragment_goa"
+        tools:layout="@layout/fragment_goa">
+        <action
+            android:id="@+id/action_goaFragment_to_countryFragment"
+            app:destination="@id/countryFragment" />
+    </fragment>
+</navigation>
